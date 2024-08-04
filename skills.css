@@ -1,0 +1,152 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    background-color: #3b82f6;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.section {
+    margin: 20px 0;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.percentage {
+    font-weight: normal;
+    color: #555;
+}
+
+.skill-bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 5px 0;
+    height: 15px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.skill-percentage {
+    display: block;
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.6s ease-in-out;
+}
+
+.java { background-color: #f44336; }
+.javascript { background-color: #ff9800; }
+.python { background-color: #4caf50; }
+.mongodb { background-color: #009688; }
+.github { background-color: #607d8b; }
+
+.frameworks {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--color) calc(var(--percentage) * 100%), 
+        #e0e0e0 calc(var(--percentage) * 100%)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.circle-percentage {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.circle-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    position: absolute;
+    bottom: 10px;
+}
+
+.soft-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.soft-skill {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.soft-skill-inner {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f4f4f4;
+    border-top: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+    .frameworks {
+        justify-content: center;
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .skill-name, .percentage {
+        font-size: 14px;
+    }
+
+    .skill-percentage {
+        height: 12px;
+    }
+}

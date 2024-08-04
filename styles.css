@@ -1,0 +1,336 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #fff;
+    color: #333;
+    padding: 20px 0;
+    border-bottom: 4px solid #feb47b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #ff7e5f;
+    animation: slideIn 1s ease-out;
+}
+
+header p {
+    margin: 10px 0;
+}
+
+header a {
+    color: #ff7e5f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #feb47b;
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px 0;
+}
+
+.section {
+    background: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    animation: fadeInUp 1s ease-out;
+}
+
+.section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: #ff7e5f;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+}
+
+.profile-image {
+    border-radius: 30% 70% 60% 40% / 40% 30% 70% 60%;
+    width: 250px;
+    height: 250px;
+    margin-right: 20px;
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.8);
+    animation: glowing 1.5s infinite alternate;
+    transform: rotate(-10deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.1) rotate(-10deg);
+    box-shadow: 0 0 35px rgba(255, 105, 180, 1);
+}
+
+.intro-text {
+    animation: fadeInText 2s ease-out;
+}
+
+.intro-text h1, .intro-text p {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+}
+
+.intro-text h1 {
+    animation-delay: 1s;
+}
+
+.intro-text p {
+    animation-delay: 4s;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background-color: #ff7e5f;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item.left {
+    left: 0;
+    flex-direction: row;
+}
+
+.timeline-item.right {
+    left: 50%;
+    flex-direction: row-reverse;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: relative;
+    animation: fadeIn 1s ease-out;
+}
+
+.timeline-arrow {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: bounceIn 1s ease-out;
+}
+
+.timeline-item.left .timeline-arrow {
+    border-right-color: #ff7e5f;
+    left: -20px;
+}
+
+.timeline-item.right .timeline-arrow {
+    border-left-color: #ff7e5f;
+    right: -20px;
+}
+
+.timeline-date {
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+    color: #ff7e5f;
+}
+
+.timeline-item.left .timeline-date {
+    left: -100px;
+}
+
+.timeline-item.right .timeline-date {
+    right: -100px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowing {
+    0% { box-shadow: 0 0 10px rgba(255, 105, 180, 0.8); }
+    100% { box-shadow: 0 0 25px rgba(255, 105, 180, 1); }
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes deleting {
+    from { width: 100%; }
+    to { width: 0; }
+}
+
+.typing {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid #ff7e5f; /* Cursor effect */
+    animation: typing 2s steps(30, end), blink 0.75s step-end infinite;
+}
+
+.deleting {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: deleting 1.5s steps(30, end);
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff7e5f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #feb47b;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.intro-text {
+    text-align: center;
+}
+
+.intro-text h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.intro-text p#subtitle {
+    font-size: 1.5em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.dynamic-text {
+    font-size: 1.8em;
+    margin-top: 20px;
+    color: #ff7e5f;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid #ff7e5f;
+    display: inline-block;
+    animation: blink 0.75s step-end infinite;
+}
+
+/* Navigation Menu */
+nav {
+    background: #ff6a88;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #ff99ac;
+    border-radius: 5px;
+    color: #fff;
+}
